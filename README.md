@@ -1,2 +1,1 @@
-# Analysis-superstore
-Real Canadian Superstore
+This project gathers detailed information about grocery products from Real Canadian Superstore, a well-known supermarket chain in Canada. The dataset covers a diverse array of grocery items, such as fresh vegetables, fruits, packaged goods, and more. 
