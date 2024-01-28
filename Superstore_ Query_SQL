@@ -1,0 +1,40 @@
+Question: 1 What are the top 10 products by their current price?
+SELECT TOP 10 name,current_price FROM [products data]
+ORDER BY Current_Price DESC;
+
+Question: 2 What is the average price per unit for each category?
+SELECT Category,AVG(Price_Per_Each) AS AveragePricePerUnit FROM [Products date]
+GROUP BY Category;
+Question: 3 Which products have had a price decrease from their previous price?
+SELECT Product_name,Previous_Price,Current_Price FROM [Products date]
+WHERE Previous_Price > 0 AND Current_Price < Previous_Price;
+
+Question: 4 What is the total sales value for each product, considering the quantity and current price?
+SELECT Product_Name from [Products date]
+SUM(current_price * Amount) AS TotalSalesValue FROM [Products date]
+GROUP BY product_name;
+Question:5 Which categories have products with the highest and lowest average prices?
+SELECT Category, AVG(Current_Price) AS AveragePrice FROM  [Products date]
+GROUP BY Category
+ORDER BY AveragePrice DESC, Category;
+
+Question:6 How many unique products are there in each category?
+SELECT Category,count(DISTINCT Product_Name) AS UniqueProductCount
+FROM [Products date]
+GROUP BY  Category;
+Question: 7 Which products have the highest and lowest quantities in stock?
+SELECT Product_Name MAX(Amount ) AS HighestQuantity,MIN(Amount) AS LowestQuantity from  [Products date]
+GROUP BY product_name;
+
+Question: 8 How many products have a price per unit greater than $2.00?
+SELECT COUNT(*) AS ProductsCount FROM [Products date]
+WHERE Price_Per_Each > 2.00;
+
+Question:9 Which products belong to the 'Fresh Vegetables' category and have a quantity greater than 5?
+
+SELECT Product_Name, Amount FROM [Products date]
+WHERE Category = 'Fresh Vegetables' AND Amount > 5;
+
+Question: 10 What is the total quantity sold for each product?
+SELECT Product_Name,SUM(Amount) AS TotalQuantitySold FROM [Products date]
+GROUP BY product_name
